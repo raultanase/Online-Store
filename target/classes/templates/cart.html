@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Cos de cumparaturi</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<h3>Cos de cumparaturi</h3>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>Cod de bare</th>
+        <th>Nume</th>
+        <th>Descriere</th>
+        <th>Pret</th>
+    </tr>
+    </thead>
+    <tr th:each="cart: ${listCart}">
+        <td th:text="${cart.barcode}"></td>
+        <td th:text="${cart.name}"></td>
+        <td th:text="${cart.description}"></td>
+        <td th:text="${cart.price}"></td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right">Total de plata:</td>
+        <td colspan="6" th:text = "${total}"></td>
+    </tr>
+</table>
+<br>
+<a href="/users">Continua cumparaturile</a>
+<br>
+<br>
+<a href="/bill">Plateste</a>
+
+</body>
+</html>
